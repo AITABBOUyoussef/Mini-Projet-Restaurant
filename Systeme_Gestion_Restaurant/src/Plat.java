@@ -1,7 +1,7 @@
 public class Plat {
 
-    private String nom;    //
-    private double prix;   //
+    private String nom;    
+    private double prix;   
 
     public Plat(String nom, double prix) {
         this.nom = nom;
