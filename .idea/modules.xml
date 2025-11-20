@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Mini-Projet-Restaurant.iml" filepath="$PROJECT_DIR$/.idea/Mini-Projet-Restaurant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Systeme_Gestion_Restaurant/Systeme_Gestion_Restaurant.iml" filepath="$PROJECT_DIR$/Systeme_Gestion_Restaurant/Systeme_Gestion_Restaurant.iml" />
+    </modules>
+  </component>
+</project>
