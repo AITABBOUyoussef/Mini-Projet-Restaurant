@@ -1,5 +1,5 @@
-public class Plat {
 
+class Plat {
     private String nom;
     private double prix;
 
@@ -14,18 +14,5 @@ public class Plat {
 
     public double getPrix() {
         return prix;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setPrix(double prix) {
-        this.prix = prix;
-    }
-
-    @Override
-    public String toString() {
-        return "Plat: " + nom + ", Prix: " + prix + " DH";
     }
 }

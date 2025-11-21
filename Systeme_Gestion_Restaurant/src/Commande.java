@@ -1,34 +1,51 @@
-import java.lang.management.PlatformLoggingMXBean;
-import java.sql.ClientInfoStatus;
-import java.util.*;
+import java.util.ArrayList;
 
-public class Commande {
+class Commande {
     private Client client;
     private Serveur serveur;
-    private ArrayList<Plat> plats = new ArrayList<>();
+    private ArrayList<Plat> plats;
+    private ArrayList<Integer> quantites;
 
     public Commande(Client client, Serveur serveur) {
         this.client = client;
         this.serveur = serveur;
+        this.plats = new ArrayList<>();
+        this.quantites = new ArrayList<>();
     }
 
-    public void ajouterPlat(Plat p) {
-        plats.add(p);
+    public void ajouterPlat(Plat plat, int quantite) {
+        plats.add(plat);
+        quantites.add(quantite);
     }
 
     public double calculerTotal() {
         double total = 0;
-        for (Plat p : plats) total += p.getPrix();
+        for (int i = 0; i < plats.size(); i++) {
+            total += plats.get(i).getPrix() * quantites.get(i);
+        }
         return total;
     }
 
-    @Override
-    public String toString() {
-        String s = "Commande de "+ client.getNom() +" prise par "+ serveur.nom +" :\n";
-        for (Plat p : plats) {
-            s += " - "+ p.toString() +" \n";
+    public void afficherDetails() {
+        System.out.println("Client : " + client.getNom());
+        System.out.println("Serveur : " + serveur.getNom());
+        System.out.println("----- Détails -----");
+
+        for (int i = 0; i < plats.size(); i++) {
+            Plat p = plats.get(i);
+            String ligne = quantites.get(i) + " x " + p.getNom();
+
+
+            if (p instanceof PlatSpecial) {
+                PlatSpecial ps = (PlatSpecial) p;
+                ligne += " (" + ps.getCategorieSpeciale() + ")";
+            }
+
+            ligne += " = " + (p.getPrix() * quantites.get(i)) + " MAD";
+            System.out.println(ligne);
         }
-        s += "Total : "+ calculerTotal() +" MAD\n";
-        return s;
+
+        System.out.println("Total : " + calculerTotal() + " MAD");
+        System.out.println("----------------------------");
     }
 }

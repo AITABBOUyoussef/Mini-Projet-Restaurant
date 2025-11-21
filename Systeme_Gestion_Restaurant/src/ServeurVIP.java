@@ -1,22 +1,12 @@
+class ServeurVIP extends Serveur {
+    private String niveauService;
 
-public class ServeurVIP extends Serveur {
-
-    public ServeurVIP(String nom) {
-        super(nom);
+    public ServeurVIP(int idServeur, String nom, String niveauService) {
+        super(idServeur, nom);
+        this.niveauService = niveauService;
     }
 
-
-    public void offrirServiceSpecial() {
-        System.out.println("Serveur VIP " + getNom() + " kay9eddem service VIP!");
-    }
-
-    @Override
-    public void prendreCommande() {
-        System.out.println("Serveur VIP " + getNom() + " kayakhod l-commande b tari9a spéciale.");
-    }
-
-    @Override
-    public String toString() {
-        return "Serveur (VIP): " + getNom();
+    public String getNiveauService() {
+        return niveauService;
     }
 }

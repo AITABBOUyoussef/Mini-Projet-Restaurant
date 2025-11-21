@@ -1,29 +1,17 @@
 public class Serveur {
+    protected int idServeur;
+    protected String nom;
 
-
-    private String nom;
-
-
-    public Serveur(String nom) {
+    public Serveur(int idServeur, String nom) {
+        this.idServeur = idServeur;
         this.nom = nom;
     }
 
+    public int getIdServeur() {
+        return idServeur;
+    }
 
     public String getNom() {
         return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void prendreCommande() {
-        System.out.println("Serveur " + this.nom + " kayakhod l-commande.");
-    }
-
-
-    @Override
-    public String toString() {
-        return "Serveur: " + nom;
     }
 }
