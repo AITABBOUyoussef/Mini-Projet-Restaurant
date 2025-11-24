@@ -8,7 +8,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
-        Restaurant restaurant = new Restaurant("London");
+        Restaurant restaurant = new Restaurant("AMAYNO");
 
         ArrayList<Plat> plats = new ArrayList<>();
         plats.add(new Plat("Pizza", 100.0));
@@ -57,15 +57,17 @@ public class Main {
 
         while (active){
 
-            System.out.println("Welcome in London restaurant !!");
-            System.out.println("-----------------Menu-----------");
-            System.out.println("[1] - Affichage du Menu des plats");
-            System.out.println("[2] - Affichage des Clients");
-            System.out.println("[3] - Affichage des Serveurs");
-            System.out.println("[4] - Affichage des Commandes");
-            System.out.println("[5] - Total des commandes");
-            System.out.println("[6] - Quitter");
-            System.out.println("Votre choix ? : ");
+            System.out.println("||==================================||");
+            System.out.println("||   Bienvenue à AMAYNO restaurant  ||");
+            System.out.println("||----------------Menu--------------||");
+            System.out.println("|| 1 - Affichage du Menu des plats  ||");
+            System.out.println("|| 2 - Affichage des Clients        ||");
+            System.out.println("|| 3 - Affichage des Serveurs       ||");
+            System.out.println("|| 4 - Affichage des Commandes      ||");
+            System.out.println("|| 5 - Total des commandes          ||");
+            System.out.println("|| 6 - Quitter                      ||");
+            System.out.println("||==================================||");
+            System.out.println("Votre choix : ");
             int n = input.nextInt();
 
             switch (n){
@@ -74,13 +76,13 @@ public class Main {
                     System.out.println("---- Liste des plats ----");
                     for (Plat p : plats){
                         System.out.println("Nom : " + p.getNom());
-                        System.out.println("Prix : " + p.getPrix());
+                        System.out.println("Prix : " + p.getPrix() + " MAD");
 
                         if (p instanceof PlatSpecial){
                             PlatSpecial ps = (PlatSpecial) p;
                             System.out.println("Categorie : " + ps.getCategorieSpeciale());
                         }
-                        System.out.println("--------------------");
+                        System.out.println("-------------------------");
                     }
                     break;
 
@@ -89,7 +91,7 @@ public class Main {
                     for (Client c : clients){
                         System.out.println("ID : " + c.getIdClient());
                         System.out.println("Nom : " + c.getNom());
-                        System.out.println("--------------------");
+                        System.out.println("-------------------------");
                     }
                     break;
 
@@ -102,7 +104,7 @@ public class Main {
                             ServeurVIP sv = (ServeurVIP) s;
                             System.out.println("niveau Service : " + sv.getNiveauService());
                         }
-                        System.out.println("--------------------");
+                        System.out.println("-------------------------");
                     }
                     break;
 
@@ -114,8 +116,11 @@ public class Main {
                     break;
 
                 case 5:
+                    System.out.println("-------------------------");
                     System.out.println("Nombre total de commandes enregistrées : "
                             + restaurant.getCommandes().size());
+                    System.out.println("-------------------------");
+
                     break;
 
                 case 6:
